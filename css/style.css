@@ -1,0 +1,240 @@
+/* Global Rules */
+:root {
+  --pri-color: #084c61;
+  --sec-color: #400d51;
+  --white: #f2f2f2;
+  --off-white: #e7e5e4;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+i {
+  display: inline-block !important;
+  cursor: pointer;
+}
+/* Global Rules */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  grid-template-rows: repeat(12, minmax(80px, 1fr));
+  grid-template-areas: "dash dash header header header header header header header header header header" "dash dash header header header header header header header header header header" "dash dash main main main main main main main main main main" "dash dash main main main main main main main main main main" "dash dash main main main main main main main main main main" "dash dash main main main main main main main main main main" "dash dash main main main main main main main main main main" "dash dash main main main main main main main main main main" "dash dash main main main main main main main main main main" "dash dash main main main main main main main main main main" "dash dash main main main main main main main main main main" "dash dash main main main main main main main main main main";
+}
+@media (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    grid-template-rows: repeat(12, minmax(80px, 1fr));
+    grid-template-areas: "header header header header header header header header header header header header" "header header header header header header header header header header header header" "main main main main main main main main main main main main" "main main main main main main main main main main main main" "main main main main main main main main main main main main" "main main main main main main main main main main main main" "main main main main main main main main main main main main" "main main main main main main main main main main main main" "main main main main main main main main main main main main" "main main main main main main main main main main main main" "main main main main main main main main main main main main" "main main main main main main main main main main main main";
+  }
+  aside {
+    display: none !important;
+  }
+}
+/* Start Sidebar */
+aside {
+  background-color: var(--pri-color);
+  grid-area: dash;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  min-width: 200px;
+}
+.asid {
+  position: sticky;
+  top: 4%;
+}
+aside h2 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+aside h2 i {
+  font-size: 2rem !important;
+  margin-right: 20px;
+}
+aside .links {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+aside .links ul,
+aside .toolkit ul {
+  display: flex;
+  flex-direction: column;
+}
+aside .links ul > *,
+aside .toolkit ul > * {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+aside .links ul li i,
+aside .toolkit ul li i {
+  margin-right: 25px;
+  font-size: 1.3rem;
+}
+
+/* End Sidebar */
+/* Start header */
+header {
+  background-color: var(--white);
+  grid-area: header;
+  padding: 25px 0;
+  position: sticky;
+  top: 0;
+  box-shadow: 2px 0px 12px rgb(0 0 0 / 50%);
+}
+header .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 50px;
+  font-size: 1.3rem;
+}
+header .search .ntfy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+  margin-right: 25px;
+}
+header .search .ntfy span {
+  font-weight: 600;
+}
+header .search input {
+  border: none;
+  background-color: var(--off-white);
+  border-radius: 15px;
+  height: 35px;
+  margin-left: 25px;
+  min-width: 600px;
+}
+header .search img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+header .hero {
+  margin-top: 25px;
+}
+header .hero .profile {
+  display: flex;
+  justify-content: space-between;
+}
+header .caption {
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+header .hero .title p {
+  font-weight: 600;
+}
+header .btns {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  justify-content: space-between;
+  margin-right: 25px;
+}
+header .btns button {
+  border: none;
+  background-color: var(--pri-color);
+  color: var(--white);
+  padding: 0.7rem 1rem;
+  border-radius: 15px;
+  width: 120px;
+  cursor: pointer;
+}
+header .hero .profile img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+@media (max-width: 768px) {
+  header .search {
+    display: none;
+  }
+  header .hero .profile {
+    flex-direction: column;
+  }
+  header .hero .profile .caption {
+    margin: 0;
+  }
+}
+/* End header */
+section {
+  background-color: var(--off-white);
+  grid-area: main;
+  display: flex;
+  justify-content: space-between;
+}
+section .projects {
+  width: 65%;
+}
+section .grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  row-gap: 25px;
+  margin-left: 50px;
+}
+section .card {
+  width: 320px;
+  background-color: var(--white);
+  padding: 25px;
+  border-left: 8px solid var(--sec-color);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+section .card .actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+section .card .actions > *:not(:last-child) {
+  margin-right: 25px;
+}
+section .news {
+  background-color: var(--white);
+  width: 320px;
+  padding: 25px;
+  border-radius: 15px;
+}
+section .new {
+  height: 80px;
+  font-size: 0.8em;
+}
+section img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 25px;
+  cursor: pointer;
+}
+section .others {
+  width: 30%;
+}
+section .trends {
+  margin-top: 25px;
+  background-color: var(--white);
+  width: 320px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+section .trends .avatar {
+  display: flex;
+  align-items: center;
+}
+section .trends .info {
+  line-height: 0.5;
+}
